@@ -41,8 +41,10 @@ Jfr https://www.cancercentrum.se/samverkan/vara-uppdrag/statistik/kvalitetsregis
 ## Installation
 
 ```{r, eval = FALSE}
-# install.packages("devtools")
-# devtools::install_bitbucket("cancercentrum/nkbcgeneral")
+if (!requireNamespace("remotes"))
+  install.packages("remotes")
+
+remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 ```
 
 ## Användning

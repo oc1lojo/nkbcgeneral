@@ -3,6 +3,11 @@
 
 # nkbcgeneral
 
+[![Build
+Status](https://travis-ci.org/oc1lojo/nkbcgeneral.svg?branch=master)](https://travis-ci.org/oc1lojo/nkbcgeneral)
+[![Build
+status](https://ci.appveyor.com/api/projects/status/6sejow2uewcd5t03/branch/master?svg=true)](https://ci.appveyor.com/project/oc1lojo/nkbcgeneral/branch/master)
+
 Planen är att lägga generella verktyg för bearbetning av NKBC-data här.
 
 Visionen är att detta R-paket kommer vara en **central** plats för

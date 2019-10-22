@@ -8,7 +8,8 @@ Status](https://travis-ci.org/oc1lojo/nkbcgeneral.svg?branch=master)](https://tr
 [![Build
 status](https://ci.appveyor.com/api/projects/status/6sejow2uewcd5t03/branch/master?svg=true)](https://ci.appveyor.com/project/oc1lojo/nkbcgeneral/branch/master)
 
-Planen är att lägga generella verktyg för bearbetning av NKBC-data här.
+Planen är att lägga generella verktyg för bearbetning av data från
+Nationellt kvalitetsregister för bröstcancer (NKBC) här.
 
 Visionen är att detta R-paket kommer vara en **central** plats för
 definition, implementering och dokumentation av generell bearbetning av
@@ -37,8 +38,10 @@ Jfr
 ## Installation
 
 ``` r
-# install.packages("devtools")
-# devtools::install_bitbucket("cancercentrum/nkbcgeneral")
+if (!requireNamespace("remotes"))
+  install.packages("remotes")
+
+remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 ```
 
 ## Användning

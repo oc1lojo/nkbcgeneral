@@ -70,6 +70,10 @@ mutate_nkbc_d_vars <- function(x, ...) {
       TRUE ~ 99L
     ),
 
+    d_opans_sjhkod = coalesce(
+      op_onk_sjhkod,
+      a_inr_sjhkod
+    ),
     # fix 1.sjukhus ansvarigt för rapportering av onkologisk behandling/2.onkologiskt sjukhus/3.anmälande sjukhus
     d_onkpostans_sjhkod = coalesce(
       post_inr_sjhkod,

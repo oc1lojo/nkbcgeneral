@@ -2,4 +2,7 @@ pandoc: 2.7.3
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles: []
+urls:
+  reference: https://cancercentrum.bitbucket.io/nkbcgeneral//reference
+  article: https://cancercentrum.bitbucket.io/nkbcgeneral//articles
 

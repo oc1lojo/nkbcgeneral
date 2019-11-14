@@ -19,7 +19,7 @@ clean_nkbc_data <- function(x, ...) {
   x[is.na(x$op_pat_sida_Varde), tidyselect::vars_select(names(x), starts_with("op_"))] <- NA
   x[is.na(x$pre_pat_sida_Varde), tidyselect::vars_select(names(x), starts_with("pre_"))] <- NA
   x[is.na(x$post_pat_sida_Varde), tidyselect::vars_select(names(x), starts_with("post_"))] <- NA
-  x[is.na(x$r_pat_sida_Varde), tidyselect::vars_select(names(x), starts_with("r_"))] <- NA # Regressionstest OK
+  x[is.na(x$r_pat_sida_Varde), tidyselect::vars_select(names(x), starts_with("r_"))] <- NA
 
   return(x)
 }

@@ -56,7 +56,7 @@ remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 library(dplyr)
 library(tidyr)
 library(lubridate)
-library(nkbcgeneral)
+library(nkbcgeneral) # https://cancercentrum.bitbucket.io/nkbcgeneral/
 ```
 
 Läs in ögonblickskopia av NKBC exporterad från INCA.

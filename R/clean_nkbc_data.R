@@ -6,6 +6,10 @@ clean_nkbc_data <- function(x, ...) {
       is.character,
       # städa fritext-variabler från specialtecken
       function(y) gsub("[[:space:]]", " ", y)
+    ) %>%
+    filter(
+      # Kräv diagnosdatum
+      !is.na(a_diag_dat)
     )
 
   # Rensa operationsformulärdata om inte operationsdatum är satt

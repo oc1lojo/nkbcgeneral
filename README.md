@@ -8,14 +8,14 @@ Status](https://travis-ci.org/oc1lojo/nkbcgeneral.svg?branch=master)](https://tr
 [![Build
 status](https://ci.appveyor.com/api/projects/status/6sejow2uewcd5t03/branch/master?svg=true)](https://ci.appveyor.com/project/oc1lojo/nkbcgeneral/branch/master)
 
-Planen är att lägga generella verktyg för bearbetning av data från
-Nationellt kvalitetsregister för bröstcancer (NKBC) här.
+Generella verktyg för bearbetning av data från Nationellt
+kvalitetsregister för bröstcancer (NKBC).
 
-Visionen är att detta R-paket kommer vara en **central** plats för
-definition, implementering och dokumentation av generell bearbetning av
-NKBC-data i **alla** utdata-kanaler.
+Detta R-paket är en **central** plats för definition, implementering och
+dokumentation av generell bearbetning av NKBC-data i **alla**
+utdata-kanaler.
 
-  - Planerad använding på INCA
+  - Använding på INCA
       - NKBC Koll på läget (KPL), med R-paketet
         [rccKPL](https://bitbucket.org/cancercentrum/rcckpl)
           - <https://bitbucket.org/cancercentrum/nkbc-kpl/> (RCC-internt
@@ -28,7 +28,7 @@ NKBC-data i **alla** utdata-kanaler.
         [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
           - <https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/>
             (RCC-internt kodförråd)
-  - Planerad använding lokalt på RCC Stockholm-Gotland
+  - Använding lokalt på RCC Stockholm-Gotland
       - Framtagande av NKBC Interaktiva Årsrapport med R-paketet
         [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
           - <https://bitbucket.org/cancercentrum/nkbc-arsrapportshiny>

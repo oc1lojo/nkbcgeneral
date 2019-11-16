@@ -16,6 +16,10 @@ dokumentation av generell bearbetning av NKBC-data i **alla**
 utdata-kanaler.
 
   - Användning på INCA
+      - NKBC onlinerapporter innanför inloggning på INCA med R-paketet
+        [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
+          - <https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/>
+            (RCC-internt kodförråd)
       - NKBC Koll på läget (KPL), med R-paketet
         [rccKPL](https://bitbucket.org/cancercentrum/rcckpl)
           - <https://bitbucket.org/cancercentrum/nkbc-kpl/> (RCC-internt
@@ -24,10 +28,6 @@ utdata-kanaler.
         [incavis](https://bitbucket.org/cancercentrum/incavis)
           - <https://bitbucket.org/cancercentrum/nkbc-vis/> (RCC-internt
             kodförråd)
-      - NKBC onlinerapporter innanför inloggning på INCA med R-paketet
-        [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
-          - <https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/>
-            (RCC-internt kodförråd)
   - Användning lokalt på RCC Stockholm-Gotland
       - Framtagande av NKBC Interaktiva Årsrapport med R-paketet
         [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)

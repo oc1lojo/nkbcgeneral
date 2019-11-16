@@ -15,7 +15,7 @@ Detta R-paket är en **central** plats för definition, implementering och
 dokumentation av generell bearbetning av NKBC-data i **alla**
 utdata-kanaler.
 
-  - Använding på INCA
+  - Användning på INCA
       - NKBC Koll på läget (KPL), med R-paketet
         [rccKPL](https://bitbucket.org/cancercentrum/rcckpl)
           - <https://bitbucket.org/cancercentrum/nkbc-kpl/> (RCC-internt
@@ -28,7 +28,7 @@ utdata-kanaler.
         [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
           - <https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/>
             (RCC-internt kodförråd)
-  - Använding lokalt på RCC Stockholm-Gotland
+  - Användning lokalt på RCC Stockholm-Gotland
       - Framtagande av NKBC Interaktiva Årsrapport med R-paketet
         [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
           - <https://bitbucket.org/cancercentrum/nkbc-arsrapportshiny>

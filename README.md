@@ -59,7 +59,7 @@ library(lubridate)
 library(nkbcgeneral) # https://cancercentrum.bitbucket.io/nkbcgeneral/
 ```
 
-Läs in ögonblickskopia av NKBC exporterad från INCA.
+Läs in ögonblicksbild av NKBC exporterad från INCA.
 
 ``` r
 load(

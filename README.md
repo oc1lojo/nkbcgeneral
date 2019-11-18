@@ -12,7 +12,7 @@ Generella verktyg för bearbetning av data från Nationellt
 kvalitetsregister för bröstcancer (NKBC).
 
 Detta R-paket är en **central** plats för definition, implementering och
-dokumentation av generell bearbetning av NKBC-data i **alla**
+dokumentation av **generell bearbetning** av NKBC-data i **alla**
 utdata-kanaler.
 
   - Användning på INCA tillsammans med R-paketet [nkbcind](https://bitbucket.org/cancercentrum/nkbcind)

@@ -23,7 +23,7 @@ Generella verktyg för bearbetning av data från Nationellt kvalitetsregister f�
 
 Detta R-paket är en **central** plats för definition, implementering och dokumentation av generell bearbetning av NKBC-data i **alla** utdata-kanaler.
 
-- Användning på INCA
+- Användning på INCA tillsammans med R-paketet [nkbcind](https://bitbucket.org/cancercentrum/nkbcind)
   - NKBC onlinerapporter innanför inloggning på INCA med R-paketet [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
     - https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/ (RCC-internt kodförråd)
   - NKBC Koll på läget (KPL), 
@@ -33,7 +33,7 @@ Detta R-paket är en **central** plats för definition, implementering och dokum
     med R-paketet [incavis](https://bitbucket.org/cancercentrum/incavis)
     - https://bitbucket.org/cancercentrum/nkbc-vis/ (RCC-internt kodförråd)
 - Användning lokalt på RCC Stockholm-Gotland
-  - Framtagande av NKBC Interaktiva Årsrapport med R-paketet [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
+  - Framtagande av NKBC Interaktiva Årsrapport med R-paketen [nkbcind](https://bitbucket.org/cancercentrum/nkbcind) och [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
     - https://bitbucket.org/cancercentrum/nkbc-arsrapportshiny (publikt kodförråd)
   - Datauttagsärenden inom NKBC
     - jfr https://www.cancercentrum.se/samverkan/vara-uppdrag/kunskapsstyrning/kvalitetsregister/datauttag/

@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">nkbcgeneral</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9010</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -65,10 +65,16 @@
 <a href="#nkbcgeneral" class="anchor"></a>nkbcgeneral</h1></div>
 
 <p>Generella verktyg för bearbetning av data från Nationellt kvalitetsregister för bröstcancer (NKBC).</p>
-<p>Detta R-paket är en <strong>central</strong> plats för definition, implementering och dokumentation av generell bearbetning av NKBC-data i <strong>alla</strong> utdata-kanaler.</p>
+<p>Detta R-paket är en <strong>central</strong> plats för definition, implementering och dokumentation av <strong>generell bearbetning</strong> av NKBC-data i <strong>alla</strong> utdata-kanaler.</p>
 <ul>
-<li>Använding på INCA
+<li>Användning på INCA tillsammans med R-paketet <a href="https://bitbucket.org/cancercentrum/nkbcind">nkbcind</a>
 <ul>
+<li>NKBC onlinerapporter innanför inloggning på INCA med R-paketet <a href="https://bitbucket.org/cancercentrum/rccshiny">rccShiny</a>
+<ul>
+<li>
+<a href="https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/" class="uri">https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/</a> (RCC-internt kodförråd)</li>
+</ul>
+</li>
 <li>NKBC Koll på läget (KPL), med R-paketet <a href="https://bitbucket.org/cancercentrum/rcckpl">rccKPL</a>
 <ul>
 <li>
@@ -81,17 +87,11 @@
 <a href="https://bitbucket.org/cancercentrum/nkbc-vis/" class="uri">https://bitbucket.org/cancercentrum/nkbc-vis/</a> (RCC-internt kodförråd)</li>
 </ul>
 </li>
-<li>NKBC onlinerapporter innanför inloggning på INCA med R-paketet <a href="https://bitbucket.org/cancercentrum/rccshiny">rccShiny</a>
-<ul>
-<li>
-<a href="https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/" class="uri">https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/</a> (RCC-internt kodförråd)</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Använding lokalt på RCC Stockholm-Gotland
+<li>Användning lokalt på RCC Stockholm-Gotland
 <ul>
-<li>Framtagande av NKBC Interaktiva Årsrapport med R-paketet <a href="https://bitbucket.org/cancercentrum/rccshiny">rccShiny</a>
+<li>Framtagande av NKBC Interaktiva Årsrapport med R-paketen <a href="https://bitbucket.org/cancercentrum/nkbcind">nkbcind</a> och <a href="https://bitbucket.org/cancercentrum/rccshiny">rccShiny</a>
 <ul>
 <li>
 <a href="https://bitbucket.org/cancercentrum/nkbc-arsrapportshiny" class="uri">https://bitbucket.org/cancercentrum/nkbc-arsrapportshiny</a> (publikt kodförråd)</li>
@@ -123,7 +123,7 @@
 <span id="cb2-2"><a href="#cb2-2"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidyr)</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(lubridate)</span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(nkbcgeneral) <span class="co"># https://cancercentrum.bitbucket.io/nkbcgeneral/</span></span></code></pre></div>
-<p>Läs in ögonblickskopia av NKBC exporterad från INCA.</p>
+<p>Läs in ögonblicksbild av NKBC exporterad från INCA.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://rdrr.io/r/base/load.html">load</a></span>(</span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="kw"><a href="https://rdrr.io/r/utils/unzip.html">unzip</a></span>(</span>
 <span id="cb3-3"><a href="#cb3-3"></a>    <span class="kw"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span>(<span class="st">"BRCA_DATA_DIR"</span>), <span class="st">"2019-09-02"</span>, <span class="st">"nkbc_nat_id 2019-09-02 09-02-35.zip"</span>),</span>

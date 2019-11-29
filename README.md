@@ -12,10 +12,15 @@ Generella verktyg för bearbetning av data från Nationellt
 kvalitetsregister för bröstcancer (NKBC).
 
 Detta R-paket är en **central** plats för definition, implementering och
-dokumentation av generell bearbetning av NKBC-data i **alla**
+dokumentation av **generell bearbetning** av NKBC-data i **alla**
 utdata-kanaler.
 
-  - Använding på INCA
+  - Användning på INCA tillsammans med R-paketet
+    [nkbcind](https://bitbucket.org/cancercentrum/nkbcind)
+      - NKBC onlinerapporter innanför inloggning på INCA med R-paketet
+        [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
+          - <https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/>
+            (RCC-internt kodförråd)
       - NKBC Koll på läget (KPL), med R-paketet
         [rccKPL](https://bitbucket.org/cancercentrum/rcckpl)
           - <https://bitbucket.org/cancercentrum/nkbc-kpl/> (RCC-internt
@@ -24,12 +29,9 @@ utdata-kanaler.
         [incavis](https://bitbucket.org/cancercentrum/incavis)
           - <https://bitbucket.org/cancercentrum/nkbc-vis/> (RCC-internt
             kodförråd)
-      - NKBC onlinerapporter innanför inloggning på INCA med R-paketet
-        [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
-          - <https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/>
-            (RCC-internt kodförråd)
-  - Använding lokalt på RCC Stockholm-Gotland
-      - Framtagande av NKBC Interaktiva Årsrapport med R-paketet
+  - Användning lokalt på RCC Stockholm-Gotland
+      - Framtagande av NKBC Interaktiva Årsrapport med R-paketen
+        [nkbcind](https://bitbucket.org/cancercentrum/nkbcind) och
         [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
           - <https://bitbucket.org/cancercentrum/nkbc-arsrapportshiny>
             (publikt kodförråd)
@@ -59,7 +61,7 @@ library(lubridate)
 library(nkbcgeneral) # https://cancercentrum.bitbucket.io/nkbcgeneral/
 ```
 
-Läs in ögonblickskopia av NKBC exporterad från INCA.
+Läs in ögonblicksbild av NKBC exporterad från INCA.
 
 ``` r
 load(

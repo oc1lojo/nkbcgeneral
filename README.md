@@ -15,7 +15,8 @@ Detta R-paket är en **central** plats för definition, implementering och
 dokumentation av **generell bearbetning** av NKBC-data i **alla**
 utdata-kanaler.
 
-  - Användning på INCA tillsammans med R-paketet [nkbcind](https://bitbucket.org/cancercentrum/nkbcind)
+  - Användning på INCA tillsammans med R-paketet
+    [nkbcind](https://bitbucket.org/cancercentrum/nkbcind)
       - NKBC onlinerapporter innanför inloggning på INCA med R-paketet
         [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
           - <https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/>
@@ -29,7 +30,9 @@ utdata-kanaler.
           - <https://bitbucket.org/cancercentrum/nkbc-vis/> (RCC-internt
             kodförråd)
   - Användning lokalt på RCC Stockholm-Gotland
-      - Framtagande av NKBC Interaktiva Årsrapport med R-paketen [nkbcind](https://bitbucket.org/cancercentrum/nkbcind) och [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
+      - Framtagande av NKBC Interaktiva Årsrapport med R-paketen
+        [nkbcind](https://bitbucket.org/cancercentrum/nkbcind) och
+        [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
           - <https://bitbucket.org/cancercentrum/nkbc-arsrapportshiny>
             (publikt kodförråd)
       - Datauttagsärenden inom NKBC

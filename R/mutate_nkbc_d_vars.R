@@ -71,7 +71,7 @@ mutate_nkbc_d_vars <- function(x, ...) {
     ),
 
     d_opans_sjhkod = dplyr::coalesce(
-      op_onk_sjhkod,
+      op_inr_sjhkod,
       a_inr_sjhkod
     ),
     # fix 1.sjukhus ansvarigt för rapportering av onkologisk behandling/2.onkologiskt sjukhus/3.anmälande sjukhus

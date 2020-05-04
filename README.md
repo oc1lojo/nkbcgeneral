@@ -46,8 +46,9 @@ Jfr
 ## Installation
 
 ``` r
-if (!requireNamespace("remotes"))
+if (!requireNamespace("remotes")) {
   install.packages("remotes")
+}
 
 remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 ```

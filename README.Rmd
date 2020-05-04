@@ -44,8 +44,9 @@ Jfr https://www.cancercentrum.se/samverkan/vara-uppdrag/statistik/kvalitetsregis
 ## Installation
 
 ```{r, eval = FALSE}
-if (!requireNamespace("remotes"))
+if (!requireNamespace("remotes")) {
   install.packages("remotes")
+}
 
 remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 ```
@@ -76,4 +77,3 @@ df_main <- df %>%
   clean_nkbc_data() %>%
   mutate_nkbc_d_vars()
 ```
-

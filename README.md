@@ -46,8 +46,9 @@ Jfr
 ## Installation
 
 ``` r
-if (!requireNamespace("remotes"))
+if (!requireNamespace("remotes")) {
   install.packages("remotes")
+}
 
 remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 ```
@@ -65,10 +66,7 @@ Läs in ögonblicksbild av NKBC exporterad från INCA.
 
 ``` r
 load(
-  unzip(
-    file.path(Sys.getenv("BRCA_DATA_DIR"), "2019-09-02", "nkbc_nat_id 2019-09-02 09-02-35.zip"),
-    exdir = tempdir()
-  )
+  file.path(Sys.getenv("BRCA_DATA_DIR"), "2020-05-04", "nkbc_nat_avid 2020-05-04 10-04-17.RData")
 )
 ```
 

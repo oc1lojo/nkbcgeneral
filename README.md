@@ -16,9 +16,9 @@ dokumentation av **generell bearbetning** av NKBC-data i **alla**
 utdata-kanaler.
 
   - Användning på INCA tillsammans med R-paketet
-    [nkbcind](https://bitbucket.org/cancercentrum/nkbcind)
+    [nkbcind](https://cancercentrum.bitbucket.io/nkbcind)
       - NKBC onlinerapporter innanför inloggning på INCA med R-paketet
-        [rccShiny](https://bitbucket.org/cancercentrum/rccshiny)
+        [rccShiny](https://cancercentrum.bitbucket.io/rccshiny)
           - <https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/>
             (RCC-internt kodförråd)
       - NKBC Koll på läget (KPL), med R-paketet

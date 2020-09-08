@@ -1,3 +1,4 @@
+#' @export
 clean_nkbc_data <- function(x, ...) {
   x <- x %>%
     dplyr::mutate_at(dplyr::vars(dplyr::ends_with("_Varde")), as.integer) %>%

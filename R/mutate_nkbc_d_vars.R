@@ -1,3 +1,4 @@
+#' @export
 mutate_nkbc_d_vars <- function(x, ...) {
   dplyr::mutate(x,
     # Beräkna variabel för primär behandling

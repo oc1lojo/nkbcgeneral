@@ -13,7 +13,7 @@
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Generella verktyg för NKBC">
 <meta property="og:description" content="Generella verktyg för bearbetning av data från Nationellt 
-    kvalitietsregister för bröstcancer (NKBC) ">
+    kvalitietsregister för bröstcancer (NKBC).">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">nkbcgeneral</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1</span>
       </span>
     </div>
 
@@ -67,9 +67,9 @@
 <p>Generella verktyg för bearbetning av data från Nationellt kvalitetsregister för bröstcancer (NKBC).</p>
 <p>Detta R-paket är en <strong>central</strong> plats för definition, implementering och dokumentation av <strong>generell bearbetning</strong> av NKBC-data i <strong>alla</strong> utdata-kanaler.</p>
 <ul>
-<li>Användning på INCA tillsammans med R-paketet <a href="https://bitbucket.org/cancercentrum/nkbcind">nkbcind</a>
+<li>Användning på INCA tillsammans med R-paketet <a href="https://cancercentrum.bitbucket.io/nkbcind">nkbcind</a>
 <ul>
-<li>NKBC onlinerapporter innanför inloggning på INCA med R-paketet <a href="https://bitbucket.org/cancercentrum/rccshiny">rccShiny</a>
+<li>NKBC onlinerapporter innanför inloggning på INCA med R-paketet <a href="https://cancercentrum.bitbucket.io/rccshiny">rccShiny</a>
 <ul>
 <li>
 <a href="https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/" class="uri">https://bitbucket.org/cancercentrum/nkbc-onlinerapporter/</a> (RCC-internt kodförråd)</li>
@@ -111,29 +111,29 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span>(<span class="st">"remotes"</span>)) {
-  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"remotes"</span>)
-}
-
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_bitbucket.html">install_bitbucket</a></span>(<span class="st">"cancercentrum/nkbcgeneral"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="cf">if</span> (<span class="op">!</span><span class="kw">requireNamespace</span>(<span class="st">"remotes"</span>)) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="kw">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>remotes<span class="op">::</span><span class="kw">install_bitbucket</span>(<span class="st">"cancercentrum/nkbcgeneral"</span>)</span></code></pre></div>
 </div>
 <div id="användning" class="section level2">
 <h2 class="hasAnchor">
 <a href="#anv%C3%A4ndning" class="anchor"></a>Användning</h2>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyr</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">lubridate</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">nkbcgeneral</span>) <span class="co"># https://cancercentrum.bitbucket.io/nkbcgeneral/</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="kw">library</span>(tidyr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="kw">library</span>(lubridate)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="kw">library</span>(nkbcgeneral) <span class="co"># https://cancercentrum.bitbucket.io/nkbcgeneral/</span></span></code></pre></div>
 <p>Läs in ögonblicksbild av NKBC exporterad från INCA.</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/load.html">load</a></span>(
-  <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span>(<span class="st">"BRCA_DATA_DIR"</span>), <span class="st">"2020-05-04"</span>, <span class="st">"nkbc_nat_avid 2020-05-04 10-04-17.RData"</span>)
-)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">load</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  <span class="kw">file.path</span>(<span class="kw">Sys.getenv</span>(<span class="st">"BRCA_DATA_DIR"</span>), <span class="st">"2020-05-04"</span>, <span class="st">"nkbc_nat_avid 2020-05-04 10-04-17.RData"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>)</span></code></pre></div>
 <p>Generell förbearbetning av NKBC-data.</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="no">df_main</span> <span class="kw">&lt;-</span> <span class="no">df</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate_all.html">mutate_if</a></span>(<span class="no">is.factor</span>, <span class="no">as.character</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select_all.html">rename_all</a></span>(<span class="kw pkg">stringr</span><span class="kw ns">::</span><span class="no"><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace</a></span>, <span class="st">"_Värde"</span>, <span class="st">"_Varde"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu">clean_nkbc_data</span>() <span class="kw">%&gt;%</span>
-  <span class="fu">mutate_nkbc_d_vars</span>()</pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>df_main &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate_if</span>(is.factor, as.character) <span class="op">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">rename_all</span>(stringr<span class="op">::</span>str_replace, <span class="st">"_Värde"</span>, <span class="st">"_Varde"</span>) <span class="op">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="st">  </span><span class="kw">clean_nkbc_data</span>() <span class="op">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate_nkbc_d_vars</span>()</span></code></pre></div>
 </div>
 </div>
   </div>

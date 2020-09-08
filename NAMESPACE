@@ -2,3 +2,4 @@
 
 export(clean_nkbc_data)
 export(mutate_nkbc_d_vars)
+importFrom(dplyr,"%>%")

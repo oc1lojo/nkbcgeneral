@@ -4,4 +4,5 @@
 ^\.travis\.yml$
 ^README\.Rmd$
 ^README-.*\.png$
+^docs$
 ^pkgdown$

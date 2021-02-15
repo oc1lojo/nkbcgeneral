@@ -69,48 +69,6 @@ mutate_nkbc_d_vars <- function(x, ...) {
       d_her2_Varde %in% 1 ~ 2L,
       d_er_Varde %in% 1 | d_pr_Varde %in% 1 ~ 1L,
       TRUE ~ 99L
-    ),
-
-    d_opans_sjhkod = dplyr::coalesce(
-      op_inr_sjhkod,
-      a_inr_sjhkod
-    ),
-    # fix 1.sjukhus ansvarigt för rapportering av onkologisk behandling/2.onkologiskt sjukhus/3.anmälande sjukhus
-    d_onkpostans_sjhkod = dplyr::coalesce(
-      post_inr_sjhkod,
-      op_onk_sjhkod,
-      a_onk_rappsjhkod,
-      a_onk_sjhkod,
-      a_inr_sjhkod
-    ),
-    d_onkpreans_sjhkod = dplyr::coalesce(
-      pre_inr_sjhkod,
-      op_onk_sjhkod,
-      a_onk_rappsjhkod,
-      a_onk_sjhkod,
-      a_inr_sjhkod
-    ),
-    # fix 1) post onk sjukhus 2) pre onk sjukhus
-    d_onk_sjhkod = dplyr::coalesce(
-      post_inr_sjhkod,
-      pre_inr_sjhkod
-    ),
-    # Sjukhus ansvarig för primär behandling
-    d_prim_beh_sjhkod = dplyr::case_when(
-      d_prim_beh_Varde == 1 ~ op_inr_sjhkod,
-      d_prim_beh_Varde == 2 ~ pre_inr_sjhkod,
-      TRUE ~ NA_integer_
-    ),
-
-    # LKF-region för att imputera om region för sjukhus saknas
-    d_region_lkf = dplyr::case_when(
-      REGION_NAMN == "Region Sthlm/Gotland" ~ 1L,
-      REGION_NAMN == "Region Uppsala/Örebro" ~ 2L,
-      REGION_NAMN == "Region Sydöstra" ~ 3L,
-      REGION_NAMN == "Region Syd" ~ 4L,
-      REGION_NAMN == "Region Väst" ~ 5L,
-      REGION_NAMN == "Region Norr" ~ 6L,
-      TRUE ~ NA_integer_
     )
   )
 }

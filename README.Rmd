@@ -16,7 +16,6 @@ knitr::opts_chunk$set(
 
 # nkbcgeneral
 
-[![Build Status](https://travis-ci.com/oc1lojo/nkbcgeneral.svg?branch=master)](https://travis-ci.com/oc1lojo/nkbcgeneral)
 [![Build status](https://ci.appveyor.com/api/projects/status/6sejow2uewcd5t03/branch/master?svg=true)](https://ci.appveyor.com/project/oc1lojo/nkbcgeneral/branch/master)
 
 Generella verktyg för bearbetning av data från Nationellt kvalitetsregister för bröstcancer (NKBC).

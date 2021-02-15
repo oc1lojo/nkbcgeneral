@@ -1,8 +1,5 @@
-nkbcgeneral
-===========
+# nkbcgeneral
 
-[![Build
-Status](https://travis-ci.com/oc1lojo/nkbcgeneral.svg?branch=master)](https://travis-ci.com/oc1lojo/nkbcgeneral)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/6sejow2uewcd5t03/branch/master?svg=true)](https://ci.appveyor.com/project/oc1lojo/nkbcgeneral/branch/master)
 
@@ -41,8 +38,7 @@ utdata-kanaler.
 Jfr
 <https://www.cancercentrum.se/samverkan/vara-uppdrag/statistik/kvalitetsregisterstatistik/>
 
-Installation
-------------
+## Installation
 
 ``` {.r}
 if (!requireNamespace("remotes")) {
@@ -52,8 +48,7 @@ if (!requireNamespace("remotes")) {
 remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 ```
 
-Användning
-----------
+## Användning
 
 ``` {.r}
 library(dplyr)

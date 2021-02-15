@@ -11,7 +11,9 @@ clean_nkbc_data <- function(x, ...) {
     dplyr::filter(
       # Kräv diagnosdatum
       !is.na(a_diag_dat)
-    )
+    ) %>%
+    # Rensa ev. rena dubbletter
+    dplyr::distinct()
 
   # Rensa operationsformulärdata om inte operationsdatum är satt
   if ("op_kir_dat" %in% names(x)) {

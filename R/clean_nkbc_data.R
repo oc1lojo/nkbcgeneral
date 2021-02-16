@@ -36,7 +36,7 @@ clean_nkbc_data <- function(x, ...) {
 
   # Korrigera värden
   x <- x %>%
-    mutate(
+    dplyr::mutate(
       # Kräv att totalt antal undersökta lymfkörtlar från samtliga axillingrepp (op_pad_lglusant) > 0
       # för att totalt antal lymfkörtlar med metastas från samtliga axillingrepp (op_pad_lglmetant) skall ha ett värde
       op_pad_lglmetant = dplyr::if_else(op_pad_lglusant > 0, op_pad_lglmetant, NA_integer_)

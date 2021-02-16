@@ -1,7 +1,7 @@
 Package: nkbcgeneral
 Type: Package
 Title: Generella verktyg för NKBC
-Version: 0.2.1
+Version: 0.2.1.9000
 Authors@R: c(
     person("John", "Lövrot", , "john.lovrot@sll.se", c("aut", "cre"), c(ORCID = "0000-0002-9339-8059")),
     person("Lina", "Benson", , , c("aut"), c(ORCID = "0000-0002-5393-0055")),
@@ -17,6 +17,14 @@ Depends:
 Imports:
     dplyr,
     tidyselect
+Suggests:
+    forcats,
+    knitr,
+    lubridate,
+    rmarkdown,
+    stringr,
+    tibble,
+    tidyr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

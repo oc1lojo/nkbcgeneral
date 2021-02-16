@@ -11,16 +11,36 @@ clean_nkbc_data <- function(x, ...) {
     dplyr::filter(
       # Kräv diagnosdatum
       !is.na(a_diag_dat)
-    )
+    ) %>%
+    # Rensa ev. rena dubbletter
+    dplyr::distinct()
 
   # Rensa operationsformulärdata om inte operationsdatum är satt
-  x[is.na(x$op_kir_dat), tidyselect::vars_select(names(x), tidyselect::starts_with("op_"))] <- NA
+  if ("op_kir_dat" %in% names(x)) {
+    x[is.na(x$op_kir_dat), tidyselect::vars_select(names(x), tidyselect::starts_with("op_"))] <- NA
+  }
 
   # Rensa formulärdata om inte pat_sida är vald för formulär
-  x[is.na(x$op_pat_sida_Varde), tidyselect::vars_select(names(x), tidyselect::starts_with("op_"))] <- NA
-  x[is.na(x$pre_pat_sida_Varde), tidyselect::vars_select(names(x), tidyselect::starts_with("pre_"))] <- NA
-  x[is.na(x$post_pat_sida_Varde), tidyselect::vars_select(names(x), tidyselect::starts_with("post_"))] <- NA
-  x[is.na(x$r_pat_sida_Varde), tidyselect::vars_select(names(x), tidyselect::starts_with("r_"))] <- NA
+  if ("op_pat_sida_Varde" %in% names(x)) {
+    x[is.na(x$op_pat_sida_Varde), tidyselect::vars_select(names(x), tidyselect::starts_with("op_"))] <- NA
+  }
+  if ("pre_pat_sida_Varde" %in% names(x)) {
+    x[is.na(x$pre_pat_sida_Varde), tidyselect::vars_select(names(x), tidyselect::starts_with("pre_"))] <- NA
+  }
+  if ("post_pat_sida_Varde" %in% names(x)) {
+    x[is.na(x$post_pat_sida_Varde), tidyselect::vars_select(names(x), tidyselect::starts_with("post_"))] <- NA
+  }
+  if ("r_pat_sida_Varde" %in% names(x)) {
+    x[is.na(x$r_pat_sida_Varde), tidyselect::vars_select(names(x), tidyselect::starts_with("r_"))] <- NA
+  }
+
+  # Korrigera värden
+  x <- x %>%
+    dplyr::mutate(
+      # Kräv att totalt antal undersökta lymfkörtlar från samtliga axillingrepp (op_pad_lglusant) > 0
+      # för att totalt antal lymfkörtlar med metastas från samtliga axillingrepp (op_pad_lglmetant) skall ha ett värde
+      op_pad_lglmetant = dplyr::if_else(op_pad_lglusant > 0, op_pad_lglmetant, NA_integer_)
+    )
 
   return(x)
 }

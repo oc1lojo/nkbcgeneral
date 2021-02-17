@@ -1,5 +1,6 @@
 # nkbcgeneral
 
+[![R-CMD-check](https://github.com/oc1lojo/nkbcgeneral/workflows/R-CMD-check/badge.svg)](https://github.com/oc1lojo/nkbcgeneral/actions)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/6sejow2uewcd5t03/branch/master?svg=true)](https://ci.appveyor.com/project/oc1lojo/nkbcgeneral/branch/master)
 

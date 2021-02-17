@@ -3,12 +3,11 @@
 on:
   push:
     branches:
-      - main
       - master
-  pull_request:
-    branches:
-      - main
-      - master
+      - develop
+      - feature/*
+      - release/*
+      - hotfix/*
 
 name: R-CMD-check
 

@@ -7,13 +7,17 @@ clean_nkbc_data <- function(x, ...) {
       is.character,
       # städa fritext-variabler från specialtecken
       function(y) gsub("[[:space:]]", " ", y)
-    ) %>%
-    dplyr::filter(
-      # Kräv diagnosdatum
-      !is.na(a_diag_dat)
-    ) %>%
-    # Rensa ev. rena dubbletter
-    dplyr::distinct()
+    )
+
+  # Kräv att diagnosdatum är satt
+  if ("a_diag_dat" %in% names(x)) {
+    x <- dplyr::filter(x, !is.na(a_diag_dat))
+  }
+
+  # Rensa ev. rena dubbletter
+  if ("R44T139_ID" %in% names(x)) {
+    x <- dplyr::distinct(x)
+  }
 
   # Rensa operationsformulärdata om inte operationsdatum är satt
   if ("op_kir_dat" %in% names(x)) {

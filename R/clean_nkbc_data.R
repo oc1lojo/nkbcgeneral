@@ -35,12 +35,18 @@ clean_nkbc_data <- function(x, ...) {
   }
 
   # Korrigera värden
-  x <- x %>%
-    dplyr::mutate(
-      # Kräv att totalt antal undersökta lymfkörtlar från samtliga axillingrepp (op_pad_lglusant) > 0
-      # för att totalt antal lymfkörtlar med metastas från samtliga axillingrepp (op_pad_lglmetant) skall ha ett värde
-      op_pad_lglmetant = dplyr::if_else(op_pad_lglusant > 0, op_pad_lglmetant, NA_integer_)
-    )
+  if ("op_pad_lglmetant" %in% names(x)) {
+    if (!("op_pad_lglusant" %in% names(x))) {
+      error("För att korrigera op_pad_lglmetant behöver op_pad_lglusant vara med.")
+    } else {
+      x <- x %>%
+        dplyr::mutate(
+          # Kräv att totalt antal undersökta lymfkörtlar från samtliga axillingrepp (op_pad_lglusant) > 0
+          # för att totalt antal lymfkörtlar med metastas från samtliga axillingrepp (op_pad_lglmetant) skall ha ett värde
+          op_pad_lglmetant = dplyr::if_else(op_pad_lglusant > 0, op_pad_lglmetant, NA_integer_)
+        )
+    }
+  }
 
   return(x)
 }

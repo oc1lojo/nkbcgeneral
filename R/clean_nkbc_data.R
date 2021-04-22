@@ -41,7 +41,7 @@ clean_nkbc_data <- function(x, ...) {
   # Korrigera värden
   if ("op_pad_lglmetant" %in% names(x)) {
     if (!("op_pad_lglusant" %in% names(x))) {
-      error("För att korrigera op_pad_lglmetant behöver op_pad_lglusant vara med.")
+      stop("För att korrigera op_pad_lglmetant behöver op_pad_lglusant vara med.")
     } else {
       x <- x %>%
         dplyr::mutate(

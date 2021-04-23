@@ -3,7 +3,7 @@ clean_nkbc_data <- function(x, ...) {
   x <- x %>%
     dplyr::mutate_at(dplyr::vars(dplyr::ends_with("_Varde")), as.integer) %>%
     dplyr::mutate_at(dplyr::vars(dplyr::ends_with("sjhkod")), as.integer) %>%
-    dplyr::mutate_at(dplyr::vars(tidyselect::ends_with("dat", ignore.case = FALSE)), lubridate::ymd) %>%
+    dplyr::mutate_at(dplyr::vars(dplyr::ends_with("dat", ignore.case = FALSE)), lubridate::ymd) %>%
     dplyr::mutate(
       VITALSTATUSDATUM_ESTIMAT = lubridate::ymd(VITALSTATUSDATUM_ESTIMAT)
     ) %>%

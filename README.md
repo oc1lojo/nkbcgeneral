@@ -53,7 +53,6 @@ remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 
 ``` {.r}
 library(dplyr)
-library(tidyr)
 library(lubridate)
 library(nkbcgeneral) # https://cancercentrum.bitbucket.io/nkbcgeneral/
 ```

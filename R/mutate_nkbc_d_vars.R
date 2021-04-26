@@ -28,8 +28,8 @@ mutate_nkbc_d_vars <- function(x, ...) {
       a_pad_erproc >= 10 | is.na(a_pad_erproc) & a_pad_er_Varde %in% 1 ~ 1L
     ),
     d_er_Varde = dplyr::case_when(
-      d_prim_beh_Varde == 1 ~ d_er_op_Varde,
-      d_prim_beh_Varde %in% c(2, 3) ~ d_er_a_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_er_op_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_er_a_Varde,
       TRUE ~ NA_integer_
     ),
 
@@ -45,8 +45,8 @@ mutate_nkbc_d_vars <- function(x, ...) {
       a_pad_prproc >= 10 | is.na(a_pad_prproc) & a_pad_pr_Varde %in% 1 ~ 1L
     ),
     d_pr_Varde = dplyr::case_when(
-      d_prim_beh_Varde == 1 ~ d_pr_op_Varde,
-      d_prim_beh_Varde %in% c(2, 3) ~ d_pr_a_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_pr_op_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_pr_a_Varde,
       TRUE ~ NA_integer_
     ),
 
@@ -62,8 +62,8 @@ mutate_nkbc_d_vars <- function(x, ...) {
       a_pad_her2_Varde %in% c(1, 2) | a_pad_her2ish_Varde %in% 2 ~ 2L
     ),
     d_her2_Varde = dplyr::case_when(
-      d_prim_beh_Varde == 1 ~ d_her2_op_Varde,
-      d_prim_beh_Varde %in% c(2, 3) ~ d_her2_a_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_her2_op_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_her2_a_Varde,
       TRUE ~ NA_integer_
     ),
 

@@ -72,13 +72,12 @@ mutate_nkbc_d_vars <- function(x, ...) {
     # -  1: Luminal
     # -  2: HER2
     # -  3: TNBC
-    # - 99: Uppgift saknas
     d_trigrp_Varde = dplyr::case_when(
       d_er_Varde %in% 2 & d_pr_Varde %in% 2 & d_her2_Varde %in% 2 ~ 3L,
-      is.na(d_er_Varde) | is.na(d_pr_Varde) | is.na(d_her2_Varde) ~ 99L,
+      is.na(d_er_Varde) | is.na(d_pr_Varde) | is.na(d_her2_Varde) ~ NA_integer_,
       d_her2_Varde %in% 1 ~ 2L,
       d_er_Varde %in% 1 | d_pr_Varde %in% 1 ~ 1L,
-      TRUE ~ 99L
+      TRUE ~ NA_integer_
     )
   )
 }

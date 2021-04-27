@@ -4,14 +4,18 @@ clean_nkbc_data <- function(x, ...) {
     dplyr::mutate_at(dplyr::vars(dplyr::ends_with("_Varde")), as.integer) %>%
     dplyr::mutate_at(dplyr::vars(dplyr::ends_with("sjhkod")), as.integer) %>%
     dplyr::mutate_at(dplyr::vars(dplyr::ends_with("dat", ignore.case = FALSE)), lubridate::ymd) %>%
-    dplyr::mutate(
-      VITALSTATUSDATUM_ESTIMAT = lubridate::ymd(VITALSTATUSDATUM_ESTIMAT)
-    ) %>%
     dplyr::mutate_if(
       is.character,
       # städa fritext-variabler från specialtecken
       function(y) gsub("[[:space:]]", " ", y)
     )
+
+  if ("VITALSTATUSDATUM_ESTIMAT" %in% names(x)) {
+    x <- x %>%
+      dplyr::mutate(
+        VITALSTATUSDATUM_ESTIMAT = lubridate::ymd(VITALSTATUSDATUM_ESTIMAT)
+      )
+  }
 
   # Kräv att diagnosdatum är satt
   if ("a_diag_dat" %in% names(x)) {

@@ -6,7 +6,7 @@ clean_nkbc_data <- function(x, ...) {
     dplyr::mutate_at(dplyr::vars(dplyr::ends_with("dat", ignore.case = FALSE)), lubridate::ymd) %>%
     dplyr::mutate_if(
       is.character,
-      # städa fritext-variabler från specialtecken
+      # Städa fritext-variabler från specialtecken
       function(y) gsub("[[:space:]]", " ", y)
     )
 

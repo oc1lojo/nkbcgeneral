@@ -70,8 +70,8 @@ mutate_nkbc_d_vars <- function(x, ...) {
     # Biologisk subtyp
     # Jfr https://bitbucket.org/cancercentrum/nkbcind/src/master/R/nkbc-pop-subtyp-09d.R
     # -  1: Luminal
-    # -  2: HER2
-    # -  3: TNBC
+    # -  2: HER2-positiv
+    # -  3: Trippelnegativ bröstcancer (TNBC)
     d_trigrp_Varde = dplyr::case_when(
       d_er_Varde %in% 2 & d_pr_Varde %in% 2 & d_her2_Varde %in% 2 ~ 3L,
       is.na(d_er_Varde) | is.na(d_pr_Varde) | is.na(d_her2_Varde) ~ NA_integer_,

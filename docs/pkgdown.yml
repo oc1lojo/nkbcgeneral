@@ -1,8 +1,8 @@
-pandoc: 2.11.4
+pandoc: '2.13'
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-02-17T06:51Z
+last_built: 2021-04-30T05:42Z
 urls:
   reference: https://cancercentrum.bitbucket.io/nkbcgeneral//reference
   article: https://cancercentrum.bitbucket.io/nkbcgeneral//articles

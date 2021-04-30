@@ -1,30 +1,34 @@
 Package: nkbcgeneral
-Type: Package
 Title: Generella verktyg för NKBC
-Version: 0.3.1
-Authors@R: c(
-    person("John", "Lövrot", , "john.lovrot@sll.se", c("aut", "cre"), c(ORCID = "0000-0002-9339-8059")),
-    person("Lina", "Benson", , , c("aut"), c(ORCID = "0000-0002-5393-0055")),
-    person("RCC", role = c("cph", "fnd"))
-    )
-Description: Generella verktyg för bearbetning av data från Nationellt 
+Version: 0.4.0
+Authors@R: 
+    c(person(given = "John",
+             family = "Lövrot",
+             role = c("aut", "cre"),
+             email = "john.lovrot@sll.se",
+             comment = c(ORCID = "0000-0002-9339-8059")),
+      person(given = "Lina",
+             family = "Benson",
+             role = "aut",
+             comment = c(ORCID = "0000-0002-5393-0055")),
+      person(given = "RCC",
+             role = c("cph", "fnd")))
+Description: Generella verktyg för bearbetning av data från Nationellt
     kvalitietsregister för bröstcancer (NKBC).
 License: GPL-3
-URL: https://cancercentrum.bitbucket.io/nkbcgeneral/, http://bitbucket.org/cancercentrum/nkbcgeneral
+URL: https://cancercentrum.bitbucket.io/nkbcgeneral/,
+    http://bitbucket.org/cancercentrum/nkbcgeneral
 BugReports: https://bitbucket.org/cancercentrum/nkbcgeneral/issues
 Depends:
     R (>= 3.0.0)
 Imports:
     dplyr,
+    lubridate,
     tidyselect
 Suggests:
-    forcats,
     knitr,
-    lubridate,
     rmarkdown,
-    stringr,
-    tibble,
-    tidyr
+    stringr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

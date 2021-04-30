@@ -6,7 +6,7 @@
 \alias{nkbcgeneral-package}
 \title{nkbcgeneral: Generella verktyg för NKBC}
 \description{
-Generella verktyg för bearbetning av data från Nationellt 
+Generella verktyg för bearbetning av data från Nationellt
     kvalitietsregister för bröstcancer (NKBC).
 }
 \seealso{

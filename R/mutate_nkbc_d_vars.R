@@ -28,8 +28,8 @@ mutate_nkbc_d_vars <- function(x, ...) {
       a_pad_erproc >= 10 | is.na(a_pad_erproc) & a_pad_er_Varde %in% 1 ~ 1L
     ),
     d_er_Varde = dplyr::case_when(
-      d_prim_beh_Varde == 1 ~ d_er_op_Varde,
-      d_prim_beh_Varde %in% c(2, 3) ~ d_er_a_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_er_op_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_er_a_Varde,
       TRUE ~ NA_integer_
     ),
 
@@ -45,8 +45,8 @@ mutate_nkbc_d_vars <- function(x, ...) {
       a_pad_prproc >= 10 | is.na(a_pad_prproc) & a_pad_pr_Varde %in% 1 ~ 1L
     ),
     d_pr_Varde = dplyr::case_when(
-      d_prim_beh_Varde == 1 ~ d_pr_op_Varde,
-      d_prim_beh_Varde %in% c(2, 3) ~ d_pr_a_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_pr_op_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_pr_a_Varde,
       TRUE ~ NA_integer_
     ),
 
@@ -62,23 +62,22 @@ mutate_nkbc_d_vars <- function(x, ...) {
       a_pad_her2_Varde %in% c(1, 2) | a_pad_her2ish_Varde %in% 2 ~ 2L
     ),
     d_her2_Varde = dplyr::case_when(
-      d_prim_beh_Varde == 1 ~ d_her2_op_Varde,
-      d_prim_beh_Varde %in% c(2, 3) ~ d_her2_a_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_her2_op_Varde,
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_her2_a_Varde,
       TRUE ~ NA_integer_
     ),
 
     # Biologisk subtyp
     # Jfr https://bitbucket.org/cancercentrum/nkbcind/src/master/R/nkbc-pop-subtyp-09d.R
     # -  1: Luminal
-    # -  2: HER2
-    # -  3: TNBC
-    # - 99: Uppgift saknas
+    # -  2: HER2-positiv
+    # -  3: Trippelnegativ bröstcancer (TNBC)
     d_trigrp_Varde = dplyr::case_when(
       d_er_Varde %in% 2 & d_pr_Varde %in% 2 & d_her2_Varde %in% 2 ~ 3L,
-      is.na(d_er_Varde) | is.na(d_pr_Varde) | is.na(d_her2_Varde) ~ 99L,
+      is.na(d_er_Varde) | is.na(d_pr_Varde) | is.na(d_her2_Varde) ~ NA_integer_,
       d_her2_Varde %in% 1 ~ 2L,
       d_er_Varde %in% 1 | d_pr_Varde %in% 1 ~ 1L,
-      TRUE ~ 99L
+      TRUE ~ NA_integer_
     )
   )
 }

@@ -1,6 +1,6 @@
 Package: nkbcgeneral
 Title: Generella verktyg för NKBC
-Version: 0.4.0
+Version: 0.4.0.9000
 Authors@R: 
     c(person(given = "John",
              family = "Lövrot",

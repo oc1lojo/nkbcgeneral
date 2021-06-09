@@ -9,7 +9,7 @@ mutate_nkbc_d_vars <- function(x, ...) {
       !is.na(op_kir_Varde) ~ op_kir_Varde,
       a_planbeh_typ_Varde %in% 1 ~ 1L,
       a_planbeh_typ_Varde %in% c(2, 4, 5, 6) ~ 2L,
-      a_planbeh_typ_Varde %in% c(3, 7, 8) ~ 3L,
+      a_planbeh_typ_Varde %in% c(3, 7, 8) ~ 3L
     ),
 
     # Invasivitet

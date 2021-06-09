@@ -5,7 +5,12 @@ mutate_nkbc_d_vars <- function(x, ...) {
     # - 1: Primär operation
     # - 2: Preoperativ onkologisk behandling eller konservativ behandling
     # - 3: Ej operation eller fjärrmetastas/-er vid diagnos
-    d_prim_beh_Varde = dplyr::coalesce(op_kir_Varde, a_planbeh_typ_Varde),
+    d_prim_beh_Varde = dplyr::case_when(
+      !is.na(op_kir_Varde) ~ op_kir_Varde,
+      a_planbeh_typ_Varde %in% 1 ~ 1L,
+      a_planbeh_typ_Varde %in% c(2, 4, 5, 6) ~ 2L,
+      a_planbeh_typ_Varde %in% c(3, 7, 8) ~ 3L,
+    ),
 
     # Invasivitet
     # - 1: Invasiv cancer

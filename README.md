@@ -53,15 +53,16 @@ remotes::install_bitbucket("cancercentrum/nkbcgeneral")
 
 ``` {.r}
 library(dplyr)
+library(stringr)
 library(lubridate)
-library(nkbcgeneral) # https://cancercentrum.bitbucket.io/nkbcgeneral/
+library(nkbcgeneral)
 ```
 
 Läs in ögonblicksbild av NKBC exporterad från INCA.
 
 ``` {.r}
 load(
-  file.path(Sys.getenv("BRCA_DATA_DIR"), "2020-05-04", "nkbc_nat_avid 2020-05-04 10-04-17.RData")
+  file.path(Sys.getenv("BRCA_DATA_DIR"), "2021-05-04", "nkbc_nat_avid 2021-05-04 08-25-25.RData")
 )
 ```
 
@@ -69,8 +70,11 @@ Generell förbearbetning av NKBC-data.
 
 ``` {.r}
 df_main <- df %>%
-  mutate_if(is.factor, as.character) %>%
-  rename_all(stringr::str_replace, "_Värde", "_Varde") %>%
+  mutate(across(where(is.factor), as.character)) %>%
+  rename_with(
+    str_replace, ends_with("_Värde"),
+    pattern = "_Värde", replacement = "_Varde"
+  ) %>%
   clean_nkbc_data() %>%
   mutate_nkbc_d_vars()
 ```

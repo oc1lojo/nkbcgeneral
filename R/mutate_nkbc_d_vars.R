@@ -5,15 +5,19 @@ mutate_nkbc_d_vars <- function(x, ...) {
     # - 1: Primär operation
     # - 2: Preoperativ onkologisk behandling eller konservativ behandling
     # - 3: Ej operation eller fjärrmetastas/-er vid diagnos
-    d_prim_beh_Varde = dplyr::coalesce(op_kir_Varde, a_planbeh_typ_Varde),
+    d_prim_beh_Varde = dplyr::case_when(
+      !is.na(op_kir_Varde) ~ op_kir_Varde,
+      a_planbeh_typ_Varde %in% 1 ~ 1L,
+      a_planbeh_typ_Varde %in% c(2, 4, 5, 6) ~ 2L,
+      a_planbeh_typ_Varde %in% c(3, 7, 8) ~ 3L
+    ),
 
     # Invasivitet
     # - 1: Invasiv cancer
     # - 2: Enbart cancer in situ
     d_invasiv_Varde = dplyr::case_when(
       a_pad_invasiv_Varde %in% 1 | op_pad_invasiv_Varde %in% 1 ~ 1L,
-      a_pad_invasiv_Varde %in% 2 | op_pad_invasiv_Varde %in% 2 ~ 2L,
-      TRUE ~ NA_integer_
+      a_pad_invasiv_Varde %in% 2 | op_pad_invasiv_Varde %in% 2 ~ 2L
     ),
 
     # ER-status
@@ -29,8 +33,7 @@ mutate_nkbc_d_vars <- function(x, ...) {
     ),
     d_er_Varde = dplyr::case_when(
       d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_er_op_Varde,
-      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_er_a_Varde,
-      TRUE ~ NA_integer_
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_er_a_Varde
     ),
 
     # PgR-status
@@ -46,8 +49,7 @@ mutate_nkbc_d_vars <- function(x, ...) {
     ),
     d_pr_Varde = dplyr::case_when(
       d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_pr_op_Varde,
-      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_pr_a_Varde,
-      TRUE ~ NA_integer_
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_pr_a_Varde
     ),
 
     # HER2-status
@@ -63,8 +65,7 @@ mutate_nkbc_d_vars <- function(x, ...) {
     ),
     d_her2_Varde = dplyr::case_when(
       d_invasiv_Varde == 1 & d_prim_beh_Varde == 1 ~ d_her2_op_Varde,
-      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_her2_a_Varde,
-      TRUE ~ NA_integer_
+      d_invasiv_Varde == 1 & d_prim_beh_Varde %in% c(2, 3) ~ d_her2_a_Varde
     ),
 
     # Biologisk subtyp
@@ -76,8 +77,7 @@ mutate_nkbc_d_vars <- function(x, ...) {
       d_er_Varde %in% 2 & d_pr_Varde %in% 2 & d_her2_Varde %in% 2 ~ 3L,
       is.na(d_er_Varde) | is.na(d_pr_Varde) | is.na(d_her2_Varde) ~ NA_integer_,
       d_her2_Varde %in% 1 ~ 2L,
-      d_er_Varde %in% 1 | d_pr_Varde %in% 1 ~ 1L,
-      TRUE ~ NA_integer_
+      d_er_Varde %in% 1 | d_pr_Varde %in% 1 ~ 1L
     )
   )
 }
